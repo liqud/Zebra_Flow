@@ -54,6 +54,7 @@ void loop() {
            
      timeout = 1;
      rpm_average = 0;
+     lpm = 0;
      n = 0;
 
    };
@@ -97,15 +98,15 @@ void updatedisplay() {
   display.clearDisplay();
   display.setTextSize(3);
   
-  if(rpm_average < 10) x = 80;
-  if(rpm_average >= 10 && rpm_average < 100) x = 62;
-  if(rpm_average >= 100 && rpm_average < 1000) x = 44;
-  if(rpm_average >= 1000 && rpm_average < 10000) x = 26;
-  if(rpm_average >= 10000 && rpm_average < 100000) x = 8;
+  if(lpm < 10) x = 80;
+  if(lpm >= 10 && lpm < 100) x = 62;
+  if(lpm >= 100 && lpm < 1000) x = 44;
+  if(lpm >= 1000 && lpm < 10000) x = 26;
+  if(lpm >= 10000 && lpm < 100000) x = 8;
   
   display.setTextColor(SSD1306_WHITE);
   
-  if(rpm_average < 100000){
+  if(lpm < 100000){
     
     display.setCursor(x, 6); 
     display.print(lpm);
