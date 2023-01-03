@@ -77,7 +77,7 @@ void loop() {
          };
          
          rpm_average = rpm_sum / (n_max + 1);
-         lpm = rpm_average / 12; //Convert rpm so that 12 revolutions equals 1l per minute
+         lpm = rpm_average / 5,760; //Convert rpm so that 12 revolutions equals 1l per minute 1/4" gredia meter at 96Hz is 1lpm
          rpm_sum = 0;
          n = 0;
          
