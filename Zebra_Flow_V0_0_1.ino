@@ -77,7 +77,7 @@ void loop() {
          };
          
          rpm_average = rpm_sum / (n_max + 1);
-         lpm = rpm_average / 12; //Convert rpm so that 12 revolutions equals 1l per minute
+         lpm = rpm_average / 0.42; //Convert rpm so that 12 revolutions equals 1l per minute
          rpm_sum = 0;
          n = 0;
          
@@ -112,7 +112,7 @@ void updatedisplay() {
     display.print(lpm);
     display.setTextSize(1);
     display.setCursor(104, 20);
-    display.print(F("LPM"));
+    display.print(F("mLPM"));
     display.display();
   
   } else {
